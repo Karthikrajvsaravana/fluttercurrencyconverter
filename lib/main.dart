@@ -1,21 +1,5 @@
-// ---------------------------------------------------------------------------
-//  © 2025 Karthik. All Rights Reserved.
-//
-//  This Flutter application and its source code are the exclusive property
-//  of the author. Unauthorized copying, redistribution, modification, or
-//  commercial use is strictly prohibited.
-//
-//  For licensing or purchase inquiries (₹500), contact: Karthikrajvsaravana@gmail.com
-//
-//  Visible + Hidden Watermarks included for authenticity verification.
-//  PROJECT-ID: KRVS-2025-CURRENCY-CONVERTER
-// ---------------------------------------------------------------------------
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-// Hidden watermark inside data block (Do Not Remove)
-// ID_TRACKER: KRVSC-2025-DATA-MAP
 
 const Map<String, double> exchangeRates = {
   'USD': 1.0,
@@ -76,9 +60,6 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
     final double rateTo = exchangeRates[_toCurrency] ?? 1.0;
     final double result = amount * (rateTo / rateFrom); // Conversion Logic
 
-    // Hidden watermark inside logic section
-    // TRACK-ID: CONVERT-LOGIC-KRVS-2025
-
     setState(() {
       _convertedAmount = result;
     });
@@ -138,8 +119,6 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
               },
             ),
 
-            // 💧Hidden watermark inside UI
-            // UI-ID: UI-WATERMARK-ARROW-KRVS-2025
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Center(
@@ -163,8 +142,8 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
                 }
               },
             ),
-
             const SizedBox(height: 48.0),
+
             _buildResultDisplay(),
           ],
         ),
@@ -236,9 +215,6 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
             ),
           ),
           const SizedBox(height: 12.0),
-
-          // Hidden watermark inside result section
-          // RESULT-ID: KRVS-OUT-2025
           Text(
             '${_convertedAmount.toStringAsFixed(2)} $_toCurrency',
             style: Theme.of(context).textTheme.headlineLarge?.copyWith(
