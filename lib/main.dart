@@ -1,5 +1,21 @@
+// ---------------------------------------------------------------------------
+//  © 2025 Karthik. All Rights Reserved.
+//
+//  This Flutter application and its source code are the exclusive property
+//  of the author. Unauthorized copying, redistribution, modification, or
+//  commercial use is strictly prohibited.
+//
+//  For licensing or purchase inquiries (₹500), contact: Karthikrajvsaravana@gmail.com
+//
+//  Visible + Hidden Watermarks included for authenticity verification.
+//  PROJECT-ID: KRVS-2025-CURRENCY-CONVERTER
+// ---------------------------------------------------------------------------
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Hidden watermark inside data block (Do Not Remove)
+// ID_TRACKER: KRVSC-2025-DATA-MAP
 
 const Map<String, double> exchangeRates = {
   'USD': 1.0,
@@ -27,7 +43,7 @@ class CurrencyConverterApp extends StatelessWidget {
         useMaterial3: true,
 
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.amber, //
+          seedColor: Colors.amber,
           brightness: Brightness.dark,
         ),
 
@@ -60,6 +76,9 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
     final double rateTo = exchangeRates[_toCurrency] ?? 1.0;
     final double result = amount * (rateTo / rateFrom); // Conversion Logic
 
+    // Hidden watermark inside logic section
+    // TRACK-ID: CONVERT-LOGIC-KRVS-2025
+
     setState(() {
       _convertedAmount = result;
     });
@@ -76,7 +95,6 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Simple Currency Converter'),
-        // AppBar color is handled by the theme's colorScheme
         backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
       ),
       body: SingleChildScrollView(
@@ -98,7 +116,6 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-
                 prefixIcon: Icon(
                   Icons.attach_money,
                   color: Theme.of(context).colorScheme.primary,
@@ -121,15 +138,15 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
               },
             ),
 
+            // 💧Hidden watermark inside UI
+            // UI-ID: UI-WATERMARK-ARROW-KRVS-2025
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 16.0),
               child: Center(
                 child: Icon(
                   Icons.arrow_downward,
                   size: 30,
-                  color: Theme.of(
-                    context,
-                  ).colorScheme.primary, // Use primary (amber)
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
@@ -146,8 +163,8 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
                 }
               },
             ),
-            const SizedBox(height: 48.0),
 
+            const SizedBox(height: 48.0),
             _buildResultDisplay(),
           ],
         ),
@@ -167,8 +184,7 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
           '$label Currency',
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
-            // 🟢 THEME UPDATE: Changed text color
-            color: Theme.of(context).colorScheme.primary, // Use primary (amber)
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
         const SizedBox(height: 8.0),
@@ -182,15 +198,11 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
             child: DropdownButton<String>(
               isExpanded: true,
               value: selectedValue,
-
               icon: Icon(
                 Icons.arrow_drop_down,
-                color: Theme.of(
-                  context,
-                ).colorScheme.primary, // Use primary (amber)
+                color: Theme.of(context).colorScheme.primary,
               ),
               onChanged: onChanged,
-              // Dropdown menu will automatically be dark
               items: currencies.map<DropdownMenuItem<String>>((String value) {
                 return DropdownMenuItem<String>(
                   value: value,
@@ -224,6 +236,9 @@ class _CurrencyConverterHomeState extends State<CurrencyConverterHome> {
             ),
           ),
           const SizedBox(height: 12.0),
+
+          // Hidden watermark inside result section
+          // RESULT-ID: KRVS-OUT-2025
           Text(
             '${_convertedAmount.toStringAsFixed(2)} $_toCurrency',
             style: Theme.of(context).textTheme.headlineLarge?.copyWith(
